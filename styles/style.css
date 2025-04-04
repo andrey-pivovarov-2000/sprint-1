@@ -1,0 +1,167 @@
+/* Дополнительный сброс поверх normalize.css */
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+blockquote, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Наследование box-sizing */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.page {
+  min-width: 1100px;
+  /* мы ещё не умеем делать мобильную версию сайта, */
+  /* поэтому выше установлена минимальная ширина страницы */
+  max-width: 1600px;
+  /* выше установили ограничение по максимальной ширине */
+  margin: 0 auto;
+  /* выше для экранов больше 1600px отцентрировали весь контент */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header {
+  position: relative; /* Для позиционирования дочерних элементов */
+  display: flex;
+  align-items: center; /* Вертикальное центрирование */
+  min-height: 600px;
+  max-height: 756px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  overflow: hidden; /* Чтобы треугольник не выходил за границы */
+}
+
+/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+.header__square-pic {
+  height: 568px;
+  width: 568px;
+}
+
+.header__title {
+  width: 730px;
+  margin-left: 64px; /* Отступ слева */
+  font-size: 102px;
+  line-height: 96px;
+  font-weight: 600; /* semi-bold */
+  z-index: 2; /* Чтобы текст был поверх других элементов */
+  position: relative; /* Для корректного z-index */
+}
+
+.header__subtitle {
+  position: absolute;
+  left: 64px;
+  bottom: 30px;
+  width: 388px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: normal;
+  z-index: 2; /* Чтобы текст был поверх других элементов */
+  margin: 0; /* Сброс стандартных отступов */
+}
+
+.header__link {
+  color: #2f80ed; /* Синий цвет из гайдлайна */
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  display: inline; /* Чтобы ссылка была в строке */
+  margin-left: 5px; /* Небольшой отступ от текста */
+}
+
+.header__link:hover {
+  opacity: 0.7;
+}
+
+.header__main-illustration {
+  position: absolute;
+  width: 765px;
+  height: 608px;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Чтобы был под текстом (z-index: 2) */
+  object-fit: cover; /* Защита от деформации */
+}
+
+.header__square-pic {
+  position: absolute;
+  right: 0;
+  top: 64px;
+  width: 568px;
+  height: 568px;
+  background-color: #2f80ed; /* Синий цвет из гайдлайна */
+  z-index: 0; /* Под текстом (z-index: 2) и картинкой (z-index: 1) */
+}
+
+.description {
+  padding: 100px 0; /* Отступы сверху/снизу по 100px */
+}
+
+.two-columns {
+  width: 80%;
+  margin: 0 auto; /* Центрирование блока */
+  display: flex; /* Для будущего двухколоночного layout */
+  justify-content: space-between; /* Распределение пространства между колонками */
+  min-height: 200px; /* Минимальная высота (можно изменить) */
+  align-items: stretch;
+}
+
+.two-columns__brief {
+  width: 175px;
+  margin: 0;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2f80ed ;
+  flex-shrink: 0; /* Запрещаем уменьшение ширины */
+}
+
+.two-columns__main-text {
+  width: 80%;
+  min-width: 784px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.two-columns__paragraph {
+  margin: 0 0 30px 0;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.two-columns__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.two-columns__span-accent {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Базовые стили логотипа */
+.logo {
+  width: 228px;
+  height: 32px;
+}
+
+/* Модификатор для размещения в шапке */
+.logo_place_header {
+  position: absolute;
+  top: 30px;
+  left: 64px;
+}
+
+/* и элемента с модификатором вида ключ-значение */
+.table__cell_theme_dark {
+  width: 200px;
+  color: white;
+  margin-right: 0;
+  margin-top: 80px;
+}
